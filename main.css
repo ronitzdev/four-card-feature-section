@@ -1,0 +1,87 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Primary */
+
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+
+  /* Neutral */
+
+  --Grey-500: hsl(234, 12%, 34%);
+  --Grey-400: hsl(212, 6%, 44%);
+  --White: hsl(0, 0%, 100%);
+}
+body {
+  min-height: 100dvh;
+  min-width: 20rem;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-style: normal;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--White);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--accent-color, #007bff);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+.grid-item {
+  display: block;
+}
+@supports (display: grid) {
+  .grid-item {
+    display: grid;
+  }
+}
+
+.header {
+  margin-top: 7.625rem;
+  margin-bottom: 5.6875rem;
+  text-align: center;
+}
+
+/* desde un media de 320px */
+
+.header__title {
+  font-size: 2.6rem;
+  color: var(--Grey-500);
+  font-weight: 200;
+}
+.header__subtitle {
+  font-size: 2.6rem;
+  color: var(--Grey-500);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+.header__description {
+  font-size: 1.5rem;
+  color: var(--Grey-400);
+}
+
+/* 375px: Estilos para pantallas de 375px en adelante */
+@media (min-width: 23.4375em) {
+  .header {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+}
