@@ -96,8 +96,9 @@ body {
 }
 
 .card {
+  position: relative;
   background-color: var(--White2);
-  padding: 40px 20px;
+  padding: 80px 20px;
   align-items: center;
   border-radius: 8px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
@@ -114,7 +115,9 @@ body {
 }
 
 .img {
-  margin-left: 200px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
 
 /* Estilos personalizados para cada card */
@@ -144,28 +147,30 @@ body {
 /* Se activa en pantallas de 1024px (64em) o más */
 @media (min-width: 64em) {
   .card-container {
-    grid-template-columns: repeat(3, 1fr); /* Redefine a 3 columnas */
-    grid-template-rows: repeat(3, 1fr); /* Redefine a 3 filas */
+    grid-template-columns: repeat(6, 1fr); /* Redefine a 3 columnas */
+    grid-template-rows: repeat(4, 1fr); /* Redefine a 3 filas */
     max-width: 900px;
     height: 600px; /* Para que la forma de cruz sea visible */
     gap: 10px;
   }
 
-  /* Posiciona cada tarjeta en la forma de cruz */
+  /* Posiciona cada tarjeta en la forma de cruz supervisor*/ 
   .card-container > .card:nth-child(1) {
-    grid-column: 2 / 3; /* Card 1: celda superior central */
-    grid-row: 1 / 2;
+    grid-column: 1 / 3; /* Card 1: celda superior central */
+    grid-row: 2 / 4;
   }
+
+  
   .card-container > .card:nth-child(2) {
-    grid-column: 1 / 2; /* Card 2: celda izquierda central */
-    grid-row: 2 / 3;
+    grid-column: 3 / 5; /* Card 2: celda izquierda central  team*/
+    grid-row: 1 / 3;
   }
   .card-container > .card:nth-child(3) {
-    grid-column: 3 / 4; /* Card 3: celda derecha central */
-    grid-row: 2 / 3;
+    grid-column: 3 / 5; /* Card 3: celda derecha central karma*/
+    grid-row: 3 / 6;
   }
   .card-container > .card:nth-child(4) {
-    grid-column: 2 / 3; /* Card 4: celda inferior central */
-    grid-row: 3 / 4;
+    grid-column: 5 / 7; /* Card 4: celda inferior central calculador*/
+    grid-row: 2 / 4;
   }
 }
