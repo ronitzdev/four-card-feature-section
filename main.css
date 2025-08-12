@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -25,7 +24,8 @@ html {
 
   --Grey-500: hsl(234, 12%, 34%);
   --Grey-400: hsl(212, 6%, 44%);
-  --White: hsl(0, 0%, 100%);
+  --White: hsl(0, 0%, 98%);
+  --White2: hsl(0, 0%, 100%);
 }
 body {
   min-height: 100dvh;
@@ -57,6 +57,8 @@ body {
 .header {
   margin-top: 7.625rem;
   margin-bottom: 5.6875rem;
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
@@ -80,8 +82,89 @@ body {
 
 /* 375px: Estilos para pantallas de 375px en adelante */
 @media (min-width: 23.4375em) {
-  .header {
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
+}
+
+/* --- ESTILOS BASE (Móvil: Una Columna) --- */
+/* Estos estilos se aplican a pantallas de hasta 425px */
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Una sola columna */
+  gap: 40px;
+  margin: 50px auto;
+  padding-bottom: 3rem;
+}
+
+.card {
+  background-color: var(--White2);
+  padding: 40px 20px;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.card__header {
+  padding-bottom: 5px;
+  font-size: 1.7rem;
+}
+.card__description {
+  padding-bottom: 35px;
+  font-size: 1.5rem;
+}
+
+.img {
+  margin-left: 200px;
+}
+
+/* Estilos personalizados para cada card */
+.card--supervisor {
+  border-top: solid 0.3125rem var(--Cyan);
+}
+.card--team-builder {
+  border-top: solid 0.3125rem var(--Red);
+}
+.card--karma {
+  border-top: solid 0.3125rem var(--Orange);
+}
+.card--calculator {
+  border-top: solid 0.3125rem var(--Blue);
+}
+
+/* --- MEDIA QUERY PARA TABLETAS (Dos Columnas) --- */
+/* Se activa en pantallas de 425px (26.5625em) o más */
+@media (min-width: 26.5625em) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr); /* Pasa a dos columnas */
+    max-width: 700px;
+  }
+}
+
+/* --- MEDIA QUERY PARA ESCRITORIO (Diseño en Cruz) --- */
+/* Se activa en pantallas de 1024px (64em) o más */
+@media (min-width: 64em) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr); /* Redefine a 3 columnas */
+    grid-template-rows: repeat(3, 1fr); /* Redefine a 3 filas */
+    max-width: 900px;
+    height: 600px; /* Para que la forma de cruz sea visible */
+    gap: 10px;
+  }
+
+  /* Posiciona cada tarjeta en la forma de cruz */
+  .card-container > .card:nth-child(1) {
+    grid-column: 2 / 3; /* Card 1: celda superior central */
+    grid-row: 1 / 2;
+  }
+  .card-container > .card:nth-child(2) {
+    grid-column: 1 / 2; /* Card 2: celda izquierda central */
+    grid-row: 2 / 3;
+  }
+  .card-container > .card:nth-child(3) {
+    grid-column: 3 / 4; /* Card 3: celda derecha central */
+    grid-row: 2 / 3;
+  }
+  .card-container > .card:nth-child(4) {
+    grid-column: 2 / 3; /* Card 4: celda inferior central */
+    grid-row: 3 / 4;
   }
 }
