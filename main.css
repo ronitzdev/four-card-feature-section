@@ -92,6 +92,7 @@ body {
   gap: 40px;
   margin: 50px auto;
   padding-bottom: 3rem;
+  padding: 0 1.5rem;
 }
 
 .card {
