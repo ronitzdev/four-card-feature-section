@@ -36,13 +36,13 @@ In this project I reaffirmed the best practices in the development of a professi
 - CSS Grid
 - Mobile-first workflow
 
-### What I learned
+### What I have learned
 
-I have learned to establish more adequate measures to the text and letter and space between elements.
+Better manage layouts with grids, improve view adaptation.
 
-### Continued development
+### Continuous development
 
-I will be improving the color contrast and performance improvement part of my projects.
+I will improve text adaptation and CSS code with more polished elements.
 
 ## Author
 
